@@ -9,4 +9,10 @@ class Page < ApplicationRecord
   scope :newest_first, lambda{ order(:position => :desc )}
   scope :search, lambda { |query| where(["name LIKE ?"], "%#{query}%")}
 
+  validates_presences_of :name
+  validates_length_of :name, :maximum => 30
+  validates_presences_of :permalink
+  validates_length_of :permalink, :minimum => 10
+  validates_uniqueness :permalink
+
 end
