@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
   root 'subjects#index'
 
+  get 'admin', :to => 'access#menu'
+  get 'access/login'
+  get 'access/menu'
+  post 'access/attempt_login'
+  get 'access/logout'
+
   resources :subjects do
     member do
       get :delete
