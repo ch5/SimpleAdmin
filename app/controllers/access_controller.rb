@@ -1,6 +1,8 @@
 class AccessController < ApplicationController
   layout 'admin'
 
+  before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
+
   def login
 
   end
@@ -32,4 +34,5 @@ class AccessController < ApplicationController
     flash[:notice] = 'Logged out'
     redirect_to(access_login_path)
   end
+
 end
