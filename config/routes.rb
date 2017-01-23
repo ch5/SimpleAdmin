@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :admin_users, :except => [:show] do
+    member do
+      get :delete
+    end
+  end
+
   root 'subjects#index'
 
   get 'admin', :to => 'access#menu'

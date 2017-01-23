@@ -27,6 +27,11 @@ class AdminUser < ApplicationRecord
 
   validate :username_is_allowed
 
+  scope :sorted, lambda { order(:last_name => :asc, :first_name => :asc)}
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 
   private
 
