@@ -4,3 +4,9 @@
 
 ### Features
 - login
+- logout
+- Subject many pages (Manage Subject)
+- Pages many sections (Manage Page, and section)
+- Has_many asociation
+- Simple Validation
+
