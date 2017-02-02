@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: admin_users
+#
+#  id              :integer          not null, primary key
+#  first_name      :string(30)
+#  last_name       :string(50)
+#  email           :string(100)      default(""), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  username        :string(25)
+#  password_digest :string
+#
+# Indexes
+#
+#  index_admin_users_on_username  (username)
+#
+
 class AdminUser < ApplicationRecord
   has_and_belongs_to_many :pages
 
